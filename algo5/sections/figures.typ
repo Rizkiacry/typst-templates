@@ -1,4 +1,4 @@
-#import "@local/versatile-apa:7.1.4": apa-figure
+#import "../lib.typ": apa-figure
 
 = Sample figures
 // Sample figures taken from https://apastyle.apa.org/style-grammar-guidelines/tables-figures/sample-figures

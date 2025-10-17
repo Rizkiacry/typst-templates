@@ -1,4 +1,4 @@
-#import "@local/versatile-apa:7.1.4": *
+#import "../lib.typ": *
 = Math Equations
 #lorem(50).
 
