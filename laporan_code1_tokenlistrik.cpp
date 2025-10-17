@@ -1,49 +1,35 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
-    long nominal_pembelian;
-    const int biaya_admin = 2500;
-    int bonus = 0;
-    long total_token;
+  int nominal;
+  int bonus = 0;
+  const int ADMIN_FEE = 2500;
 
-    cout << "=== PEMBELIAN TOKEN LISTRIK PLN ===" << endl;
-    cout << "Masukkan nominal pembelian: Rp ";
-    cin >> nominal_pembelian;
-    cout << endl;
+  cout << "=== PEMBELIAN TOKEN LISTRIK PLN ===" << endl;
+  cout << "Masukkan nominal pembelian: Rp ";
+  cin >> nominal;
 
-    // Logika penentuan bonus dan validasi input menggunakan if-else if-else
-    if (nominal_pembelian < 20000) {
-        cout << "Nominal terlalu kecil! Minimal Rp 20.000" << endl;
-    } else if (nominal_pembelian >= 100000) {
-        bonus = 5000;
-        total_token = nominal_pembelian - biaya_admin + bonus;
+  if (nominal < 20000) {
+    cout << "\nNominal terlalu kecil! Minimal Rp 20.000" << endl;
+    return 0;
+  }
 
-        cout << "--- RINCIAN PEMBELIAN ---" << endl;
-        cout << "Nominal: Rp " << nominal_pembelian << endl;
-        cout << "Biaya Admin: Rp " << biaya_admin << endl;
-        cout << "Bonus: Rp " << bonus << endl;
-        cout << "Token yang didapat: Rp " << total_token << endl;
-    } else if (nominal_pembelian >= 50000) {
-        bonus = 2000;
-        total_token = nominal_pembelian - biaya_admin + bonus;
+  if (nominal >= 100000) {
+    bonus = 5000;
+  } else if (nominal >= 50000) {
+    bonus = 2000;
+  } else {
+    bonus = 0;
+  }
 
-        cout << "--- RINCIAN PEMBELIAN ---" << endl;
-        cout << "Nominal: Rp " << nominal_pembelian << endl;
-        cout << "Biaya Admin: Rp " << biaya_admin << endl;
-        cout << "Bonus: Rp " << bonus << endl;
-        cout << "Token yang didapat: Rp " << total_token << endl;
-    } else { // Kondisi untuk >= 20000 dan < 50000
-        bonus = 0;
-        total_token = nominal_pembelian - biaya_admin + bonus;
+  int totalToken = nominal - ADMIN_FEE + bonus;
 
-        cout << "--- RINCIAN PEMBELIAN ---" << endl;
-        cout << "Nominal: Rp " << nominal_pembelian << endl;
-        cout << "Biaya Admin: Rp " << biaya_admin << endl;
-        cout << "Bonus: Rp " << bonus << endl;
-        cout << "Token yang didapat: Rp " << total_token << endl;
-    }
+  cout << "\n--- RINCIAN PEMBELIAN ---" << endl;
+  cout << "Nominal: Rp " << nominal << endl;
+  cout << "Biaya Admin: Rp " << ADMIN_FEE << endl;
+  cout << "Bonus: Rp " << bonus << endl;
+  cout << "Token yang didapat: Rp " << totalToken << endl;
 
-    return 0; // Mengakhiri program
+  return 0;
 }

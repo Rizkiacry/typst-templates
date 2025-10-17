@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/rizkia/typst-templates/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

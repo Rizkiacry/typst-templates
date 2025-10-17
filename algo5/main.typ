@@ -3,7 +3,7 @@
 // Document titles should be formatted in title case (https://capitalizemytitle.com/)
 #let doc-title = [American Psychological Association (APA) Style Template for Typst]
 
-#let logo-content = image("../laporan_image1_logo.jpg", width: 40%)
+#let logo-content = image("../laporan_image1_logo.jpg", width:10cm)
 
 #show: versatile-apa.with(
   title: doc-title,
@@ -31,53 +31,32 @@
   // The following fields are not used in the new cover page, but are kept for compatibility
   affiliations: (),
   due-date: datetime.today().display(),
-  running-head: [running head],
+  running-head: [],
   author-notes: [],
   keywords: ("APA", "template", "Typst"),
-  abstract: lorem(100),
   font-family: "Libertinus Serif",
   font-size: 12pt,
   region: "us",
   language: "en",
-  paper-size: "us-letter",
+  paper-size: "a4",
   implicit-introduction-heading: false,
   abstract-as-description: true,
 )
 
 #outline()
 #pagebreak()
-#outline(target: figure.where(kind: table), title: [Tables])
-#pagebreak()
-#outline(target: figure.where(kind: image), title: [Figures])
-#pagebreak()
-#outline(target: figure.where(kind: math.equation), title: [Equations])
-#pagebreak()
-#outline(target: figure.where(kind: raw), title: [Listings])
-#pagebreak()
 
-= #doc-title // Implicit introduction heading level 1, remove if implicit-introduction-heading is true
 #include "sections/introduction.typ"
 
 #pagebreak()
 #include "sections/lists.typ"
 
 #pagebreak()
-#include "sections/quotes.typ"
 
-#pagebreak()
-#include "sections/computer-code.typ"
-
-#pagebreak()
-#include "sections/math.typ"
-
-#pagebreak()
 #bibliography(
-  "bibliography/ref.yml",
+  "bibliography/laporan_references.bib",
   style: "csl/apa.csl",
   full: true,
   title: auto,
 )
 
-#show: appendix
-
-#include "sections/appendix.typ"

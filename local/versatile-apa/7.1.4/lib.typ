@@ -66,7 +66,7 @@
   region: "us",
   language: "en",
   custom-terms: (:),
-  paper-size: "us-letter",
+  paper-size: "a4",
   implicit-introduction-heading: true,
   abstract-as-description: true,
   body,
@@ -96,6 +96,19 @@
     lang: language,
   )
 
+  set page(margin: 2cm, paper: paper-size, numbering: "1", number-align: top + right, background:place(dx:1.5cm,dy:1.5cm,rect(stroke:black,box(width:100%-3cm,height:100%-3cm))), 
+    header: [
+#align(left)[Software Architecture & Quality Laboratory]
+#align(right)[Lap-02 / 17 Oktober 2025]
+    
+  ],
+    footer: [
+#align(left)[ZAIN AKBAR RIZKIA]
+#align(right)[202531091]
+  ],
+  )
+
+
   // Custom cover page
   page(
     header: none,
@@ -103,9 +116,9 @@
   )[
     #align(center)[
       #v(2em)
-      LAPORAN PRAKTIKUM
+      #strong[LAPORAN PRAKTIKUM]
       #parbreak()
-      ALGORITMA DAN PEMROGRAMAN
+      #strong[ALGORITMA DAN PEMROGRAMAN]
       #v(2em)
       #if logo != none {
         logo
@@ -113,6 +126,7 @@
       #v(2em)
 
       #align(left)[
+#pad(left: 4cm)[
         #grid(
           columns: (auto, auto, 1fr),
           gutter: 1em,
@@ -128,6 +142,7 @@
           ],
         )
       ]
+      ]
 
       #v(1fr)
 
@@ -141,13 +156,6 @@
     ]
   ]
   pagebreak()
-
-  set page(margin: 1in, paper: paper-size, numbering: "1", number-align: top + right, header: context {
-    upper(running-head)
-    h(1fr)
-    str(here().page())
-  })
-
 
   set par(
     leading: double-spacing,
@@ -163,9 +171,6 @@
 
   if running-head != none {
     if type(running-head) == content { running-head = to-string(running-head) }
-    if running-head.len() > 50 {
-      panic("Running head must be no more than 50 characters, including spaces and punctuation.")
-    }
   }
 
   show heading: set text(size: font-size)
