@@ -103,23 +103,24 @@
   )[
     #align(center)[
       #v(2em)
-      [LAPORAN PRAKTIKUM]
+      LAPORAN PRAKTIKUM
       #parbreak()
-      [ALGORITMA DAN PEMROGRAMAN]
+      ALGORITMA DAN PEMROGRAMAN
       #v(2em)
       #if logo != none {
-        image(logo, width: 40%)
+        logo
       }
       #v(2em)
 
       #align(left)[
         #grid(
           columns: (auto, auto, 1fr),
-          [NAMA], [:], authors.at(0).name,
-          [NIM], [:], student-id,
-          [KELAS], [:], course,
-          [DOSEN], [:], instructor,
-          [NO. PC], [:], pc-number,
+          gutter: 1em,
+          [NAMA], [:], [ #authors.at(0).name ],
+          [NIM], [:], [ #student-id ],
+          [KELAS], [:], [ #course ],
+          [DOSEN], [:], [ #instructor ],
+          [NO. PC], [:], [ #pc-number ],
           [ASISTEN], [:], [
             #for (i, assistant) in assistants.enumerate() {
               str(i+1) + ". " + assistant + parbreak()
@@ -136,7 +137,7 @@
       #parbreak()
       #strong[INSTITUT TEKNOLOGI PLN-JAKARTA]
       #parbreak()
-      #academic-year
+      #strong[#academic-year]
     ]
   ]
   pagebreak()

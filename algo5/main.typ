@@ -1,7 +1,9 @@
-#import "lib.typ": *
+#import "@local/versatile-apa:7.1.4": *
 
 // Document titles should be formatted in title case (https://capitalizemytitle.com/)
 #let doc-title = [American Psychological Association (APA) Style Template for Typst]
+
+#let logo-content = image("../laporan_image1_logo.jpg", width: 40%)
 
 #show: versatile-apa.with(
   title: doc-title,
@@ -20,7 +22,7 @@
     "ARIF RIZKI KURNIADI",
     "GANGSAR ANJASMORO",
   ),
-  logo: "laporan_image1_logo.jpg",
+  logo: logo-content,
   faculty: "FAKULTAS TELEMATIKA ENERGI",
   department: "TEKNIK INFORMATIKA",
   institute: "INSTITUT TEKNOLOGI PLN-JAKARTA",
