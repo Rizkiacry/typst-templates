@@ -1,4 +1,4 @@
-#import "../lib.typ": *
+#import "@local/versatile-apa:7.1.4": *
 
 // Document titles should be formatted in title case (https://capitalizemytitle.com/)
 #let doc-title = [American Psychological Association (APA) Style Template for Typst]

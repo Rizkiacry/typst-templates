@@ -37,3 +37,4 @@ universe/
 
 # ACM
 !acm-suite/assets/**/*
+.DS_Store
