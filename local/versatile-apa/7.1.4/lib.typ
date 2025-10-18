@@ -178,9 +178,10 @@
 
   show heading: it => emph(strong[#it.body.])
   show heading.where(level: 1): it => align(center, strong(it.body))
-  show heading.where(level: 2): it => par(first-line-indent: 0in, strong(it.body))
+  show heading.where(level: 2): it => strong(it.body)
 
-  show heading.where(level: 3): it => par(first-line-indent: 0in, emph(strong(it.body)))
+  show heading.where(level: 3): it => emph(strong(it.body))
+  
 
   show heading.where(level: 4): it => strong[#it.body.]
   show heading.where(level: 5): it => emph(strong[#it.body.])
@@ -225,8 +226,8 @@
   )
 
   set enum(
-    indent: 0.5in - 1.5em,
-    body-indent: 0.75em,
+    indent: 0.5in,
+    body-indent: 0.25in,
   )
 
   set raw(
